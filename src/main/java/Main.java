@@ -1,24 +1,65 @@
 import implementations.*;
 import interfaces.List;
 
+import java.util.Iterator;
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
+//        testArrayList();
+//        testQueue();
+//        testStack();
+        ArrayList<Employee> myList = new ArrayList<Employee>();
+        Employee employee1 = new Employee(1, "Tyler", 28, "Programmer");
+        Employee employee2 = new Employee(2, "Xavier", 21, "Staff");
+        Employee employee3 = new Employee(3, "Enid", 20, "Staff");
+        Employee employee4 = new Employee(4, "Ajax", 22, "Programmer");
+        Employee employee5 = new Employee(5, "Yoko", 25, "Programmer");
+        myList.add(employee1);
+        myList.add(employee2);
+        myList.add(employee3);
+        myList.add(employee4);
+        myList.add(employee5);
+        System.out.println(myList);
+//
+        System.out.println("Employee with index = 2 is\n  " + myList.get(2));
+        System.out.println("Employee with index = 4 is\n   " + myList.get(4));
+
+        myList.remove(4);
+        Employee employee6 = new Employee(6, "Anya", 26, "Staff");
+        myList.add(employee6);
+        System.out.println(myList);
+        System.out.println("\n");
+
+        Employee employee7 = new Employee(7, "Benjamin", 27, "Programmer");
+        myList.add(3, employee7);
+        System.out.println(myList);
+//
+//        employee1.displayInformation();
+    }
+//
+//
+//        } employee1.displayInformation();
+
+
+
 //       testArrayList();
 //       testStack();
 //       testQueue();
 //        testSinglyLinklist();
-        testDoublyLinklist();
-    }
+//        testDoublyLinklist();
 
+//    }
     public static void testArrayList(){
         List<Integer> list = new ArrayList<Integer>();
         list.add(5);
         list.add(7);
+        list.add(9);
         list.add(0, 9);
         System.out.println(list);
         list.remove(1);
-        System.out.println(list);
-        System.out.println(list.get(1));
+        System.out.println("After remove: \n" + list);
+        System.out.println("index = 1 is " + list.get(1));
     }
     public static void testStack() {
         Stack2<Integer> myStack = new Stack2<>();

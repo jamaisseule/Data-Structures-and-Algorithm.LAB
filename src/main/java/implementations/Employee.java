@@ -4,23 +4,23 @@ import interfaces.Display;
 
 import java.util.Objects;
 
-public class Student implements Display {
+public class Employee implements Display {
     private int ID;
     private String name;
     private int age;
-    private double score;
+    private String position;
 
-    public Student(){
+    public Employee(){
 
     }
-    public Student(int ID){
+    public Employee(int ID){
         this.ID = ID;
     }
-    public Student(int ID,String name,int age, double score){
+    public Employee(int ID, String name, int age, String position){
         this.ID = ID;
         this.name = name;
         this.age = age;
-        this.score = score;
+        this.position = position;
     }
     public int getID() {
         return ID;
@@ -46,28 +46,27 @@ public class Student implements Display {
         this.age = age;
     }
 
-    public double getScore() {
-        return score;
+    public String getPosition() {
+        return position;
     }
 
-    public void setScore(double score) {
-        this.score = score;
+    public void setPosition(String position) {
+        this.position = position;
     }
     public String toString(){
-        return "ID :"+ID + " name: "+name + " age: "+ age+ " Score: "+ score;
+        return "ID:"+ ID + ", name: "+ name + ", age: "+ age + ", Position: "+ position;
     }
-
     @Override
     public void displayInformation() {
-        System.out.println("Day la sinh vien so thu tu "+ID +"voi ten la "+name);
+        System.out.println("This is employee with ID = "+ ID +", and name is "+ name);
     }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof Student)) return false;
-        Student student = (Student) o;
-        return ID == student.ID;
+        if (!(o instanceof Employee)) return false;
+        Employee employee = (Employee) o;
+        return ID == employee.ID;
     }
 
     @Override

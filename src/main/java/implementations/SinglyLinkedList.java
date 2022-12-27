@@ -55,7 +55,6 @@ public class SinglyLinkedList<E> implements LinkedList<E> {
             //Node temp will point to head
             temp = head;
             current = null;
-
             //Traverse through the list till the middle of the list is reached
             for(int i = 0; i < count; i++) {
                 //Node current will point to temp
@@ -79,7 +78,6 @@ public class SinglyLinkedList<E> implements LinkedList<E> {
         size--;
         return data;
     }
-
     @Override
     public E removeLast() {
         ensureNonEmpty();
@@ -150,17 +148,14 @@ public class SinglyLinkedList<E> implements LinkedList<E> {
     public E getFirst() {
         return head.element;
     }
-
     @Override
     public E getLast() {
         return tail.element;
     }
-
     @Override
     public int size() {
         return size;
     }
-
     @Override
     public boolean isEmpty() {
         return size == 0;
@@ -174,7 +169,6 @@ public class SinglyLinkedList<E> implements LinkedList<E> {
             public boolean hasNext() {
                 return current != null;
             }
-
             @Override
             public E next() {
                 E element = current.element;

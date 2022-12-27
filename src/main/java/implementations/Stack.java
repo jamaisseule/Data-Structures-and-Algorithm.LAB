@@ -40,7 +40,9 @@ public class Stack<E> implements AbstractStack<E> { // thêm vào cuối cùng l
         this.top = temp;
         this.size--;
         return element;
-//        return null;
+    }
+    private void ensureNonEmpty() {
+        if (size == 0) throw new IllegalStateException("Stack is Empty!");
     }
 
     @Override
@@ -49,9 +51,7 @@ public class Stack<E> implements AbstractStack<E> { // thêm vào cuối cùng l
         return this.top.element;  //lấy element trên cùng
 //        return null;
     }
-    private void ensureNonEmpty() {
-        if (size == 0) throw new IllegalStateException("Stack is Empty!");
-    }
+
     @Override
     public String toString() {
         Node<E> current = top;

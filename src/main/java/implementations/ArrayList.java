@@ -22,7 +22,6 @@ public class ArrayList<E> implements List<E> {
         this.elements[this.size++] = element;
         return true;
     }
-
     private Object[] grow(){
         return Arrays.copyOf(this.elements, this.elements.length * 2);
     }
@@ -31,7 +30,7 @@ public class ArrayList<E> implements List<E> {
         StringBuilder result = new StringBuilder();
         for(int i = 0; i < size; i++){
             if(i == size-1) result.append(elements[i]);
-            else result.append(elements[i]+" ");
+            else result.append(elements[i]+"\n");
         }
         return result.toString();
     }
@@ -41,6 +40,11 @@ public class ArrayList<E> implements List<E> {
         checkIndex(index);
         insert(index, element);
         return true;
+    }
+    private  void checkIndex(int index){
+        if (index < 0 || index >= this.size){
+            throw new IndexOutOfBoundsException(String.format("Index out of bounds: %d for size: %d", index, this.size));
+        }
     }
     private void insert(int index, E element){
         if(this.size == this.elements.length){
@@ -105,11 +109,7 @@ public class ArrayList<E> implements List<E> {
     private Object[] shrink(){
         return Arrays.copyOf(this.elements, this.elements.length / 2);
     }
-    private  void checkIndex(int index){
-        if (index < 0 || index >= this.size){
-            throw new IndexOutOfBoundsException(String.format("Index out of bounds: %d for size: %d", index, this.size));
-        }
-    }
+
     @Override
     public int size() {
         return 0;
